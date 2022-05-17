@@ -24,7 +24,7 @@ jobs:
     - name: Build with Ant
       run: ant -noinput -buildfile build.xml
     - name: Ant dist
-      run: ant -noinput -dist build.xml
+      run: ant -noinput -d dist
     - name: Download a Build Artifact
       uses: actions/download-artifact@v3
       with:
