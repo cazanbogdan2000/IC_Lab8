@@ -39,5 +39,4 @@ jobs:
       # uses: cicirello/javadoc-cleanup@ef23269b3b39f8d71200f09a8c183db37dea1426
       uses: cicirello/javadoc-cleanup@v1.3.2
       with:
-        # The path to the root of the website
         path-to-root: .
