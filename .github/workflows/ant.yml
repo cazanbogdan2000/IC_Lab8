@@ -23,13 +23,17 @@ jobs:
         distribution: 'temurin'
     - name: Build with Ant
       run: ant -noinput -buildfile build.xml
-    - name: Download a Build Artifact
-      uses: actions/download-artifact@v3
+    - name: Maven Jar Publish
+      # You may pin to the exact commit or the version.
+      # uses: eric2788/maven-jar-publish@60eda097610b2d5e98c046c1e4ead01a28bd94a6
+      uses: eric2788/maven-jar-publish@v2
       with:
-        # Artifact name
-        name: lab8.jar # optional
-        # Destination path
-        path: dist/lab8.jar # optional
+        # the java version to build (if not provied, it will use the ${ maven.compiler.target } properties
+        java-version: NONE
+        # the location of pom.xml (to build)
+        locate: .
+        # the module path that to upload the artifact. (the module name must same as the module path)
+        upload-module: .
     - name: javadoc-cleanup
       # You may pin to the exact commit or the version.
       # uses: cicirello/javadoc-cleanup@ef23269b3b39f8d71200f09a8c183db37dea1426
