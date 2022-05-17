@@ -22,15 +22,8 @@ jobs:
         distribution: 'temurin'
     - name: Build with Ant
       run: ant -noinput -buildfile build.xml
-    - name: Maven Jar Publish
-      # You may pin to the exact commit or the version.
-      # uses: eric2788/maven-jar-publish@60eda097610b2d5e98c046c1e4ead01a28bd94a6
-      uses: eric2788/maven-jar-publish@v2
-      with:
-        # the java version to build (if not provied, it will use the ${ maven.compiler.target } properties
-        java-version: NONE
-        locate: .
-        upload-module: .
+    - name: Download a Build Artifact
+      uses: actions/download-artifact@v3.0.0
     - name: javadoc-cleanup
       uses: cicirello/javadoc-cleanup@v1.3.2
       with:
